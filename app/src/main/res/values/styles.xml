@@ -1,0 +1,63 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="cardBackgroundColor">@color/cardBackground</item>
+        <item name="cardHighlightBackgroundColor">@color/cardHighlightBackground</item>
+        <item name="textColor">@color/text</item>
+        <item name="cardHighlightTextColor">@color/cardHighlightText</item>
+        <item name="background">@color/background</item>
+        <item name="cardTextColor">@color/cardText</item>
+    </style>
+
+    <style name="active_item">
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:alpha">1</item>
+    </style>
+    <style name="inactive_item">
+        <item name="android:layout_marginTop">25dp</item>
+        <item name="android:alpha">0.33</item>
+    </style>
+    <style name="active_title">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:alpha">1</item>
+    </style>
+    <style name="inactive_title">
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:alpha">0</item>
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="timetable_Time">
+        <item name="android:textSize">33sp</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textColor">?attr/cardHighlightTextColor</item>
+    </style>
+    <style name="timetable_ampm">
+        <item name="android:textSize">8dp</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textColor">?attr/cardHighlightTextColor</item>
+    </style>
+    <style name="timetable_roomnumber">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textColor">?attr/cardHighlightTextColor</item>
+    </style>
+    <style name="timetable_coursename">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textColor">?attr/cardHighlightTextColor</item>
+    </style>
+
+</resources>

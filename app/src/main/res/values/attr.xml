@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="theme">
+        <attr name="cardHighlightBackgroundColor" format="color"/>
+        <attr name="textColor" format="color"/>
+        <attr name="cardHighlightTextColor" format="color"/>
+        <attr name="BackgroundColor" format="color"/>
+        <attr name="cardBackgroundColor" format="color"/>
+        <attr name="cardTextColor" format="color"/>
+    </declare-styleable>
+</resources>

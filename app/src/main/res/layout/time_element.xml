@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="11dp"
+    android:paddingBottom="11dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/time_time"
+        style="@style/timetable_Time"
+        android:layout_width="38dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical|right"
+        android:layout_marginBottom="2dp"
+        android:text="1" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/time_ampm"
+            style="@style/timetable_ampm"
+            android:layout_width="14dp"
+            android:layout_height="wrap_content"
+            android:text="AM"
+            android:layout_marginBottom="3dp"/>
+        <TextView
+            android:id="@+id/time_min"
+            style="@style/timetable_ampm"
+            android:layout_width="14dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text=":30"/>
+    </LinearLayout>
+
+    <TextView
+        style="@style/timetable_Time"
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="2dp"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="0dp"
+        android:text="-" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/time_card"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="0dp"
+        android:layout_marginStart="19dp"
+        android:layout_width="267dp"
+        android:layout_height="59dp"
+        app:contentPaddingLeft="8dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
+        android:backgroundTint="?attr/cardHighlightBackgroundColor">
+        <LinearLayout
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="2dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/time_class"
+                android:text="SJT-725"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/timetable_roomnumber"/>
+            <TextView
+                android:id="@+id/time_coursename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="0dp"
+                android:text="Microprocessor and interfacing"
+                style="@style/timetable_coursename"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>

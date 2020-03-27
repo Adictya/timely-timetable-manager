@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TimeTable_Activity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_bar1"
+        android:text="Second Activity"/>
+
+    <androidx.cardview.widget.CardView
+        android:animateLayoutChanges="true"
+        android:id="@+id/bottom_bar1"
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:layout_alignParentBottom="true"
+        app:cardBackgroundColor="@color/cardBackground">
+        <LinearLayout
+            android:id="@+id/timetable_button1"
+            android:layout_width="205dp"
+            android:orientation="vertical"
+            android:layout_height="match_parent"
+            android:onClick="buttonClicked">
+            <ImageView
+                android:id="@+id/timetable_icon1"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                style="@style/inactive_item"
+                android:src="@drawable/ic_timetableico"/>
+
+            <TextView
+                android:id="@+id/timetable_title1"
+                style="@style/inactive_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="TIME TABLE"
+                android:letterSpacing="1.2"
+                android:alpha="0"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/slottable_button1"
+            android:layout_width="205dp"
+            android:layout_gravity="end"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/slottable_icon1"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                style="@style/active_item"
+                android:src="@drawable/ic_slottableico"/>
+            <TextView
+                android:id="@+id/slottable_title1"
+                android:layout_marginTop="5dp"
+                android:letterSpacing="1.2"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/active_title"
+                android:text="SLOT TABLE"
+                android:textColor="@color/text"
+                />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
