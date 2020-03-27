@@ -7,39 +7,27 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.Adictya.timely.model.TimeSlots;
-import com.Adictya.timely.model.TimeSlotsViewModel;
-import com.Adictya.timely.ui.TimeSlotsAdapter;
-import com.Adictya.timely.ui.ViewPagerAdapter;
+import com.Adictya.timely.ui.TimePagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.List;
 import java.util.Locale;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 public class fragment_Time_pager extends Fragment {
-    TabLayout tabLayout;
-    ViewPager2 viewPager;
+    private TabLayout tabLayout;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View rootView = inflater.inflate(R.layout.first_tab, container, false);
-        viewPager = rootView.findViewById(R.id.view_pager);
+        ViewPager2 viewPager = rootView.findViewById(R.id.view_pager);
         tabLayout = rootView.findViewById(R.id.tabs);
-
+        //TODO: Set Tab position to match Design
         viewPager.setAdapter(createCardAdapter());
         new TabLayoutMediator(tabLayout, viewPager,
                 new TabLayoutMediator.TabConfigurationStrategy() {
@@ -65,8 +53,8 @@ public class fragment_Time_pager extends Fragment {
         });
         return rootView;
     }
-    private ViewPagerAdapter createCardAdapter() {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getActivity());
+    private TimePagerAdapter createCardAdapter() {
+        TimePagerAdapter adapter = new TimePagerAdapter(getActivity());
         return adapter;
     }
 
@@ -75,6 +63,8 @@ public class fragment_Time_pager extends Fragment {
     }
 
     private void createCustomTabs(LayoutInflater inflater, ViewGroup container){
+
+        //TODO:"Move extra code to dater Function"
         LinearLayout tabOne = (LinearLayout) inflater.inflate(R.layout.custom_tab,container, false);
         TextView date = tabOne.findViewById(R.id.tab_date);
         TextView day = tabOne.findViewById(R.id.tab_day);
@@ -141,5 +131,4 @@ public class fragment_Time_pager extends Fragment {
         day.setText(daysoftheWeek[sday]);
     }
 }
-
 

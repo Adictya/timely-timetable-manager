@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buttonClicked(View view){
+        // TODO "Change Paris.style to Animation"
         Fragment currentFragment = new fragment_Time_pager();
         switch (view.getId()){
             case R.id.timetable_button:
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 Paris.style(slotIcon).apply(R.style.active_item);
                 Paris.style(timeText).apply(R.style.inactive_title);
                 Paris.style(timeIcon).apply(R.style.inactive_item);
-                currentFragment = new SecondFragment();
+                currentFragment = new fragment_Slot_pager();
                 break;
         }
 

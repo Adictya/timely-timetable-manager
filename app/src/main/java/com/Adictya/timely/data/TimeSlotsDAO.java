@@ -25,11 +25,11 @@ public interface TimeSlotsDAO {
     @Query("UPDATE Slots_table SET course_col = :slotCourse, slot_col = :sclass WHERE slot_col = :slot")
     int updateTimeSlots(String slot,String sclass, String slotCourse);
 
-    @Query("SELECT * FROM Slots_table WHERE course_col not null")
-    LiveData<List<TimeSlots>> getAllTimeSlots();
+    @Query("SELECT * FROM Slots_table WHERE course_col not null AND lab_col==0")
+    LiveData<List<TimeSlots>> getAllTheorySlots();
 
-    @Query("SELECT * FROM Slots_table WHERE course_col not null GROUP BY slot_col")
-    LiveData<List<TimeSlots>> getAllSlots();
+    @Query("SELECT * FROM Slots_table WHERE course_col not null AND lab_col==1 GROUP BY slot_col")
+    LiveData<List<TimeSlots>> getAllLabSlots();
 
     @Query("SELECT * FROM SLOTS_TABLE WHERE course_col not null and day_col =:day")
     LiveData<List<TimeSlots>> getAllDaySlots(Integer day);

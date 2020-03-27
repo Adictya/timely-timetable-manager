@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/customtab2"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:paddingBottom="12dp"
+    android:paddingTop="4dp"
+    android:text="Theory"
+    android:fontFamily="@font/montserrat"
+    android:textSize="29sp"
+    android:textColor="@color/text"
+    >
+
+</TextView>

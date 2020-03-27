@@ -35,6 +35,7 @@ public class FirstFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 //         Inflate the layout for this fragment
+        // TODO:"Add a no classes today function"
         timeSlotsViewModel = new ViewModelProvider(this, new TimeSlotsViewModelFactory(
                 this.getActivity().getApplication(), day)).get(TimeSlotsViewModel.class);
         timeSlotsViewModel = new ViewModelProvider(this).get(TimeSlotsViewModel.class);

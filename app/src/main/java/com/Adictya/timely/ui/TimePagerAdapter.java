@@ -7,9 +7,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-public class ViewPagerAdapter extends FragmentStateAdapter {
+public class TimePagerAdapter extends FragmentStateAdapter {
     private static final int CARD_ITEM_SIZE = 7;
-    public ViewPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
+    public TimePagerAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
     @NonNull @Override public Fragment createFragment(int position) {

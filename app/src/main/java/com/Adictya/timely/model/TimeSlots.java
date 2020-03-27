@@ -15,6 +15,9 @@ public class TimeSlots {
     @ColumnInfo(name = "slot_col")
     private String slot;
 
+    @NonNull
+    @ColumnInfo(name = "lab_col")
+    private Integer slot_lab;
 
     @NonNull
     @ColumnInfo(name = "day_col")
@@ -30,12 +33,22 @@ public class TimeSlots {
     @ColumnInfo(name = "class_col")
     private String slot_class;
 
-    public TimeSlots(@NonNull String slot, @NonNull Integer slot_day, @NonNull String slot_time, String slot_course, String slot_class) {
+    public TimeSlots(@NonNull String slot,@NonNull Integer slot_lab, @NonNull Integer slot_day, @NonNull String slot_time, String slot_course, String slot_class) {
         this.slot = slot;
+        this.slot_lab = slot_lab;
         this.slot_day = slot_day;
         this.slot_time = slot_time;
         this.slot_course = slot_course;
         this.slot_class = slot_class;
+    }
+
+    @NonNull
+    public Integer getSlot_lab() {
+        return slot_lab;
+    }
+
+    public void setSlot_lab(@NonNull Integer slot_lab) {
+        this.slot_lab = slot_lab;
     }
 
     public String getSlot_class() {

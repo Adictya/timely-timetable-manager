@@ -17,8 +17,8 @@ public class TimeSlotsRepository {
     private ClassesDAO classesDAO;
     private TimeSlotsDAO timeSlotsDAO;
     private LiveData<List<Classes>> allClasses;
-    private LiveData<List<TimeSlots>> allTimeSlots;
-    private LiveData<List<TimeSlots>> allSlots;
+    private LiveData<List<TimeSlots>> allTheorySlots;
+    private LiveData<List<TimeSlots>> allLabSlots;
     private LiveData<List<TimeSlots>> allDaySlots;
 
     public TimeSlotsRepository(Application application) {
@@ -26,9 +26,10 @@ public class TimeSlotsRepository {
         classesDAO = db.classesDAO();
         timeSlotsDAO = db.timeSlotsDAO();
         allClasses = classesDAO.getAllClasses();
-        allTimeSlots = timeSlotsDAO.getAllTimeSlots();
-        allSlots = timeSlotsDAO.getAllSlots();
+        allTheorySlots = timeSlotsDAO.getAllTheorySlots();
+        allLabSlots = timeSlotsDAO.getAllLabSlots();
     }
+
 
     public TimeSlotsRepository(Application application,Integer day){
         TimeSlotsRoomDatabase db = TimeSlotsRoomDatabase.getDatabase(application);
@@ -40,12 +41,12 @@ public class TimeSlotsRepository {
         return allClasses;
     }
 
-    public LiveData<List<TimeSlots>> getAllTimeSlots(){
-        return allTimeSlots;
+    public LiveData<List<TimeSlots>> getAllTheorySlots(){
+        return allTheorySlots;
     }
 
-    public LiveData<List<TimeSlots>> getAllSlots(){
-        return allSlots;
+    public LiveData<List<TimeSlots>> getAllLabSlots(){
+        return allLabSlots;
     }
 
     public LiveData<List<TimeSlots>> getAllDaySlots(){

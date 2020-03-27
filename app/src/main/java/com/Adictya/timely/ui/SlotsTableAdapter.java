@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.Adictya.timely.R;
@@ -31,6 +32,13 @@ public class SlotsTableAdapter extends RecyclerView.Adapter<SlotsTableAdapter.Sl
     @NonNull
     @Override
     public SlotsTableAdapter.SlotsTableViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        if(viewType == R.layout.slot_element){
+            View view = slotViewInflater.inflate(R.layout.slot_element, parent,false);
+        }
+
+        else {
+            View view = slotViewInflater.inflate(R.layout.add_button, parent,false);
+        }
         View view = slotViewInflater.inflate(R.layout.slot_element, parent,false);
         SlotsTableAdapter.SlotsTableViewHolder tsm = new SlotsTableAdapter.SlotsTableViewHolder(view);
         return tsm;
@@ -44,6 +52,18 @@ public class SlotsTableAdapter extends RecyclerView.Adapter<SlotsTableAdapter.Sl
             holder.slotViewClass.setText(current.getSlot_class());
             holder.slotViewSlot.setText(current.getSlot());
         }
+        if(position == timeSlotsList.size()) {
+            holder.button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+        }
+    }
+
+    public int getItemViewType(int position) {
+        return (position == timeSlotsList.size()) ? R.layout.add_button : R.layout.slot_element;
     }
 
     public void setTimeSlots(List<TimeSlots> slots) {
@@ -64,12 +84,15 @@ public class SlotsTableAdapter extends RecyclerView.Adapter<SlotsTableAdapter.Sl
         private TextView slotViewSlot;
         private TextView slotViewClass;
         private TextView slotViewCourse;
+        public Button button;
+
 
         public SlotsTableViewHolder(@NonNull View itemView) {
             super(itemView);
             slotViewSlot = itemView.findViewById(R.id.slot_slot);
             slotViewClass = itemView.findViewById(R.id.slot_class);
             slotViewCourse = itemView.findViewById(R.id.slot_coursename);
+            button = itemView.findViewById(R.id.add_button);
         }
     }
 }
