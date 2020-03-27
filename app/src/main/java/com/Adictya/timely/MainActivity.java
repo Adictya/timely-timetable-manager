@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Fragment currentFragment = new FirstFragment();
+        Fragment currentFragment = new fragment_Time_pager();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,currentFragment).commit();
@@ -27,14 +27,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buttonClicked(View view){
-        Fragment currentFragment = null;
+        Fragment currentFragment = new fragment_Time_pager();
         switch (view.getId()){
             case R.id.timetable_button:
                 Paris.style(slotText).apply(R.style.inactive_title);
                 Paris.style(slotIcon).apply(R.style.inactive_item);
                 Paris.style(timeText).apply(R.style.active_title);
                 Paris.style(timeIcon).apply(R.style.active_item);
-                currentFragment = new FirstFragment();
+                currentFragment = new fragment_Time_pager();
                 break;
             case R.id.slottable_button:
                 Paris.style(slotText).apply(R.style.active_title);
