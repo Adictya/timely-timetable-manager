@@ -19,6 +19,7 @@ public class TimeSlotsRepository {
     private LiveData<List<Classes>> allClasses;
     private LiveData<List<TimeSlots>> allTimeSlots;
     private LiveData<List<TimeSlots>> allSlots;
+    private LiveData<List<TimeSlots>> allDaySlots;
 
     public TimeSlotsRepository(Application application) {
         TimeSlotsRoomDatabase db = TimeSlotsRoomDatabase.getDatabase(application);
@@ -27,6 +28,12 @@ public class TimeSlotsRepository {
         allClasses = classesDAO.getAllClasses();
         allTimeSlots = timeSlotsDAO.getAllTimeSlots();
         allSlots = timeSlotsDAO.getAllSlots();
+    }
+
+    public TimeSlotsRepository(Application application,Integer day){
+        TimeSlotsRoomDatabase db = TimeSlotsRoomDatabase.getDatabase(application);
+        timeSlotsDAO = db.timeSlotsDAO();
+        allDaySlots = timeSlotsDAO.getAllDaySlots(day);
     }
 
     public LiveData<List<Classes>> getAllClasses(){
@@ -39,6 +46,10 @@ public class TimeSlotsRepository {
 
     public LiveData<List<TimeSlots>> getAllSlots(){
         return allSlots;
+    }
+
+    public LiveData<List<TimeSlots>> getAllDaySlots(){
+        return allDaySlots;
     }
 
     private static class TimeSlotContainer {

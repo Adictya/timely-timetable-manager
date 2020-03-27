@@ -53,13 +53,13 @@ public abstract class TimeSlotsRoomDatabase extends RoomDatabase {
             classesDAO.deleteAll();
             //for testing
             Classes classes = new Classes("CSE1002","Maths","mths");
-            TimeSlots timeSlots = new TimeSlots("A1","Monday","9:00 AM","Internet of Things","SJT-725");
+            TimeSlots timeSlots = new TimeSlots("A1",0,"9:00 AM","Internet of Things","SJT-725");
             timeSlotsDAO.insert(timeSlots);
-            timeSlots = new TimeSlots("A2","Monday","10:30 AM","Software Engineering","SJT-524");
+            timeSlots = new TimeSlots("A2",1,"10:30 AM","Software Engineering","SJT-524");
             timeSlotsDAO.insert(timeSlots);
-            timeSlots = new TimeSlots("A2","Tuesday","11:30 AM","Software Engineering","SJT-524");
+            timeSlots = new TimeSlots("A2",2,"11:30 AM","Software Engineering","SJT-524");
             timeSlotsDAO.insert(timeSlots);
-            timeSlots = new TimeSlots("B1","Monday","9:00 AM",null,null);
+            timeSlots = new TimeSlots("B1",6,"9:00 AM",null,null);
             timeSlotsDAO.insert(timeSlots);
 
             return null;

@@ -121,6 +121,7 @@ public class fragment_Time_pager extends Fragment {
     private void Dater(TextView date,TextView day,Integer index){
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd", Locale.UK);
+        SimpleDateFormat dateFormat2 = new SimpleDateFormat("MMM", Locale.UK);
         Integer sday;
         cal.add(Calendar.DATE,index);
         String sdate = dateFormat.format(cal.getTime());
@@ -133,7 +134,7 @@ public class fragment_Time_pager extends Fragment {
                         "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th",
                         //    30    31
                         "th", "st" };
-        sdate = sdate.replaceAll("0*","")+suffixes[cal.get(Calendar.DAY_OF_MONTH)];
+        sdate = sdate.replaceAll("0*","")+suffixes[cal.get(Calendar.DAY_OF_MONTH)]+" "+dateFormat2.format(cal.getTime());
         date.setText(sdate);
         String[] daysoftheWeek = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
         sday = cal.get(Calendar.DAY_OF_WEEK)-1;

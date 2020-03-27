@@ -30,4 +30,7 @@ public interface TimeSlotsDAO {
 
     @Query("SELECT * FROM Slots_table WHERE course_col not null GROUP BY slot_col")
     LiveData<List<TimeSlots>> getAllSlots();
+
+    @Query("SELECT * FROM SLOTS_TABLE WHERE course_col not null and day_col =:day")
+    LiveData<List<TimeSlots>> getAllDaySlots(Integer day);
 }
