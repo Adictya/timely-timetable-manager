@@ -7,10 +7,15 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
         app:tabMode="scrollable"
+        app:tabMaxWidth="343dp"
+        app:tabTextAppearance="@style/active_tab"
+        app:tabIndicatorHeight="0dp"
+        app:tabPadding="0dp"
         style="@style/ThemeOverlay.AppCompat.Dark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="27dp"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <androidx.viewpager2.widget.ViewPager2

@@ -26,10 +26,6 @@ import androidx.recyclerview.widget.RecyclerView;
 public class FirstFragment extends Fragment {
     private static final String ARG_COUNT = "param1";
     private Integer counter;
-    private int[] COLOR_MAP = {
-            R.color.red_100, R.color.red_300, R.color.red_500, R.color.red_700, R.color.blue_100,
-            R.color.blue_300, R.color.blue_500, R.color.blue_700, R.color.green_100, R.color.green_300,
-            R.color.green_500, R.color.green_700};
 
     private TimeSlotsAdapter timeSlotsAdapter;
     private TimeSlotsViewModel timeSlotsViewModel;
@@ -76,6 +72,5 @@ public class FirstFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        view.setBackgroundColor(ContextCompat.getColor(getContext(), COLOR_MAP[counter]));
     }
 }

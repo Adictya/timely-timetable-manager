@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:alpha="0.33">
+
+    <TextView
+        android:id="@+id/tab_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9th Jan"
+        android:textSize="18sp"
+        android:fontFamily="@font/montserrat"
+        android:textColor="@color/text"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="0dp"
+        />
+    <TextView
+        android:id="@+id/tab_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Monday"
+        android:textSize="29sp"
+        android:fontFamily="@font/montserrat"
+        android:textColor="@color/text"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="0dp"
+        />
+
+</LinearLayout>
