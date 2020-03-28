@@ -57,16 +57,18 @@ public class TimeSlotsRepository {
         String course;
         String slot;
         String sclass;
+        Integer slab;
 
-        TimeSlotContainer(String course, String slot, String sclass){
-            course = this.course;
-            slot = this.slot;
-            sclass = this.sclass;
+        TimeSlotContainer(String course, String slot, String sclass, Integer slab){
+            this.course = course;
+            this.slot = slot;
+            this.sclass = sclass;
+            this.slab = slab;
         }
     }
 
     public void insertTimeSlot(TimeSlots timeSlots){
-        TimeSlotContainer timeSlotContainer = new TimeSlotContainer(timeSlots.getSlot_course(),timeSlots.getSlot(),timeSlots.getSlot_class());
+        TimeSlotContainer timeSlotContainer = new TimeSlotContainer(timeSlots.getSlot_course(),timeSlots.getSlot(),timeSlots.getSlot_class(),timeSlots.getSlot_lab());
         new insertTimeSlotAsyncTask(timeSlotsDAO).execute(timeSlotContainer);
     }
 
@@ -78,7 +80,7 @@ public class TimeSlotsRepository {
 
         @Override
         protected Void doInBackground(TimeSlotContainer... params) {
-            asyncTaskDao.updateTimeSlots(params[0].slot,params[0].course,params[0].sclass);
+            asyncTaskDao.updateTimeSlots(params[0].slot,params[0].course,params[0].sclass,params[0].slab);
             return null;
         }
     }

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.circularreveal.CircularRevealFrameLayout android:id="@+id/popup_id"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_gravity="center"
+        android:layout_width="387dp"
+        android:layout_height="220dp"
+        app:cardElevation="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/courseCode_field"
+                android:layout_width="353dp"
+                android:layout_height="41dp"
+                android:layout_below="@id/slots_field"
+                android:hint="Enter Course Name (Internet of things...)" />
+
+            <Button
+                android:id="@+id/popup_savebutton"
+                android:layout_width="105dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/class_field"
+                android:backgroundTint="@color/cardHighlightBackground"
+                android:drawableEnd="@drawable/ic_navigate_next_black_24dp"
+                android:text="Done"
+                android:textColor="@color/cardText" />
+
+            <EditText
+                android:id="@+id/class_field"
+                android:layout_width="353dp"
+                android:layout_height="41dp"
+                android:layout_below="@id/courseCode_field"
+                android:hint="Enter Classroom (SJT201...)" />
+
+
+
+            <AutoCompleteTextView
+                android:id="@+id/slots_field"
+                android:layout_width="353dp"
+                android:layout_height="41dp"
+                android:hint="Enter Slots (A1,B2...)" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</com.google.android.material.circularreveal.CircularRevealFrameLayout>

@@ -1,9 +1,7 @@
 package com.Adictya.timely.data;
 
-import com.Adictya.timely.model.Classes;
 import com.Adictya.timely.model.TimeSlots;
 
-import java.sql.Time;
 import java.util.List;
 
 import androidx.lifecycle.LiveData;
@@ -22,10 +20,10 @@ public interface TimeSlotsDAO {
     @Query("DELETE FROM Slots_table where slot_col = :slot")
     int deleteATimeSlot(String slot);
 
-    @Query("UPDATE Slots_table SET course_col = :slotCourse, slot_col = :sclass WHERE slot_col = :slot")
-    int updateTimeSlots(String slot,String sclass, String slotCourse);
+    @Query("UPDATE Slots_table SET course_col = :slotCourse, class_col = :sclass , lab_col = :slab WHERE slot_col = :slot")
+    int updateTimeSlots(String slot,String sclass, String slotCourse,Integer slab);
 
-    @Query("SELECT * FROM Slots_table WHERE course_col not null AND lab_col==0")
+    @Query("SELECT * FROM Slots_table WHERE course_col not null AND lab_col==0 GROUP BY slot_col")
     LiveData<List<TimeSlots>> getAllTheorySlots();
 
     @Query("SELECT * FROM Slots_table WHERE course_col not null AND lab_col==1 GROUP BY slot_col")

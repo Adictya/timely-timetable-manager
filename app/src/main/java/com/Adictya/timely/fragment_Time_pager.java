@@ -26,6 +26,7 @@ public class fragment_Time_pager extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View rootView = inflater.inflate(R.layout.first_tab, container, false);
         ViewPager2 viewPager = rootView.findViewById(R.id.view_pager);
+        viewPager.setOffscreenPageLimit(6);
         tabLayout = rootView.findViewById(R.id.tabs);
         //TODO: Set Tab position to match Design
         viewPager.setAdapter(createCardAdapter());
@@ -124,7 +125,7 @@ public class fragment_Time_pager extends Fragment {
                         "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th",
                         //    30    31
                         "th", "st" };
-        sdate = sdate.replaceAll("0*","")+suffixes[cal.get(Calendar.DAY_OF_MONTH)]+" "+dateFormat2.format(cal.getTime());
+        sdate = sdate.replaceAll("^0","")+suffixes[cal.get(Calendar.DAY_OF_MONTH)]+" "+dateFormat2.format(cal.getTime());
         date.setText(sdate);
         String[] daysoftheWeek = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
         sday = cal.get(Calendar.DAY_OF_WEEK)-1;

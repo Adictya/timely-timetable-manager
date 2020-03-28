@@ -12,6 +12,7 @@
         <item name="cardHighlightTextColor">@color/cardHighlightText</item>
         <item name="background">@color/background</item>
         <item name="cardTextColor">@color/cardText</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
     <style name="active_item">
@@ -50,7 +51,7 @@
         <item name="android:textColor">?attr/cardHighlightTextColor</item>
     </style>
     <style name="timetable_roomnumber">
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">22sp</item>
         <item name="android:fontFamily">@font/montserrat</item>
         <item name="android:textColor">?attr/cardHighlightTextColor</item>
     </style>

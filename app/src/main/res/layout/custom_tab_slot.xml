@@ -6,9 +6,8 @@
     android:paddingBottom="12dp"
     android:paddingTop="4dp"
     android:text="Theory"
-    android:fontFamily="@font/montserrat"
+    android:fontFamily="@font/montserrat_light"
     android:textSize="29sp"
-    android:textColor="@color/text"
-    >
+    android:textColor="@color/text">
 
 </TextView>

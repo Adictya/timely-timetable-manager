@@ -3,6 +3,7 @@ package com.Adictya.timely.model;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "Slots_table")
@@ -38,6 +39,14 @@ public class TimeSlots {
         this.slot_lab = slot_lab;
         this.slot_day = slot_day;
         this.slot_time = slot_time;
+        this.slot_course = slot_course;
+        this.slot_class = slot_class;
+    }
+
+    @Ignore
+    public TimeSlots(@NonNull String slot, @NonNull Integer slot_lab, String slot_course, String slot_class) {
+        this.slot = slot;
+        this.slot_lab = slot_lab;
         this.slot_course = slot_course;
         this.slot_class = slot_class;
     }

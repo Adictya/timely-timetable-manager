@@ -7,6 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
+        android:layout_marginStart="11dp"
         android:id="@+id/slot_slot"
         style="@style/timetable_Time"
         android:textSize="25dp"

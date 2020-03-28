@@ -1,7 +1,6 @@
 package com.Adictya.timely.ui;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +10,6 @@ import android.widget.TextView;
 import com.Adictya.timely.R;
 import com.Adictya.timely.model.TimeSlots;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -25,6 +20,8 @@ public class SlotsTableAdapter extends RecyclerView.Adapter<SlotsTableAdapter.Sl
     private final LayoutInflater slotViewInflater;
 
     private List<TimeSlots> timeSlotsList;
+
+//    private Context context;
 
     public SlotsTableAdapter(Context context) {
         slotViewInflater = LayoutInflater.from(context);
@@ -41,6 +38,7 @@ public class SlotsTableAdapter extends RecyclerView.Adapter<SlotsTableAdapter.Sl
         }
         View view = slotViewInflater.inflate(R.layout.slot_element, parent,false);
         SlotsTableAdapter.SlotsTableViewHolder tsm = new SlotsTableAdapter.SlotsTableViewHolder(view);
+//        context = parent.getContext();
         return tsm;
     }
 
@@ -51,14 +49,6 @@ public class SlotsTableAdapter extends RecyclerView.Adapter<SlotsTableAdapter.Sl
             holder.slotViewCourse.setText(current.getSlot_course());
             holder.slotViewClass.setText(current.getSlot_class());
             holder.slotViewSlot.setText(current.getSlot());
-        }
-        if(position == timeSlotsList.size()) {
-            holder.button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                }
-            });
         }
     }
 

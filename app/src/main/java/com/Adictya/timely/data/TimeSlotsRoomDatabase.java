@@ -24,6 +24,8 @@ public abstract class TimeSlotsRoomDatabase extends RoomDatabase {
             synchronized (TimeSlotsRoomDatabase.class){
                 if (INSTANCE == null){
                     //create our db
+//                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(),TimeSlotsRoomDatabase.class,"timeslots_db")
+//                            .addCallback(roomDatabaseCallback).createFromAsset("database/database2.db").fallbackToDestructiveMigration().build();
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),TimeSlotsRoomDatabase.class,"timeslots_db")
                             .addCallback(roomDatabaseCallback).build();
                 }
@@ -52,16 +54,31 @@ public abstract class TimeSlotsRoomDatabase extends RoomDatabase {
             timeSlotsDAO.deleteAll();
             classesDAO.deleteAll();
             //for testing
-            Classes classes = new Classes("CSE1002","Maths","mths");
-            TimeSlots timeSlots = new TimeSlots("A1",0,0,"9:00 AM","Internet of Things","SJT-725");
-            timeSlotsDAO.insert(timeSlots);
-            timeSlots = new TimeSlots("A2",0,1,"10:30 AM","Software Engineering","SJT-524");
-            timeSlotsDAO.insert(timeSlots);
-            timeSlots = new TimeSlots("A2",1,2,"11:30 AM","Software Engineering","SJT-524");
-            timeSlotsDAO.insert(timeSlots);
-            timeSlots = new TimeSlots("B1",1,6,"9:00 AM",null,null);
-            timeSlotsDAO.insert(timeSlots);
+            Classes classes = new Classes("CSE1002","Microprocessor and Interfacing","Micro");
+            classes = new Classes("CSE1003","Internet of Things","IOT");
 
+            TimeSlots timeSlots = new TimeSlots("A1",0,0,"8:00 AM","Microprocessor and Interfacing","SJT-522");
+            timeSlotsDAO.insert(timeSlots);
+            timeSlots = new TimeSlots("B1",0,1,"8:00 AM","English for Engineers","TT-305");
+            timeSlotsDAO.insert(timeSlots);
+            timeSlots = new TimeSlots("B1",0,2,"9:00 AM","English for Engineers","TT-305");
+            timeSlotsDAO.insert(timeSlots);
+            timeSlots = new TimeSlots("A1",0,2,"9:00 AM","Microprocessor and Interfacing","SJT-522");
+            timeSlotsDAO.insert(timeSlots);
+            timeSlots = new TimeSlots("A2",0,1,"2:00 PM","Internet of Things","SJT-201");
+            timeSlotsDAO.insert(timeSlots);
+            timeSlots = new TimeSlots("B2",0,2,"2:00 PM","Personal Finance","MGT-213");
+            timeSlotsDAO.insert(timeSlots);
+            timeSlots = new TimeSlots("L31+L32",1,4,"2:00 PM","Python Practical Knowledge","SJT-302");
+            timeSlotsDAO.insert(timeSlots);
+            timeSlots = new TimeSlots("L41+L42",1,5,"2:00 PM","Basic Electrical Engineering","TT-523");
+            timeSlotsDAO.insert(timeSlots);
+            timeSlots = new TimeSlots("A2",0,3,"3:00 PM","Internet of Things","SJT-201");
+            timeSlotsDAO.insert(timeSlots);
+            timeSlots = new TimeSlots("B2",0,4,"3:00 PM","Personal Finance","MGT-213");
+            timeSlotsDAO.insert(timeSlots);
+            timeSlots = new TimeSlots("C1",0,4,"3:00 PM","","");
+            timeSlotsDAO.insert(timeSlots);
             return null;
         }
     }
