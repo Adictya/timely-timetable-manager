@@ -77,7 +77,7 @@ public abstract class TimeSlotsRoomDatabase extends RoomDatabase {
             timeSlotsDAO.insert(timeSlots);
             timeSlots = new TimeSlots("B2",0,4,"3:00 PM","Personal Finance","MGT-213");
             timeSlotsDAO.insert(timeSlots);
-            timeSlots = new TimeSlots("C1",0,4,"3:00 PM","","");
+            timeSlots = new TimeSlots("C1",0,4,"3:00 PM",null,null);
             timeSlotsDAO.insert(timeSlots);
             return null;
         }
